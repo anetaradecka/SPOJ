@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1610915435 source:c:\users\aneta\documents\kurs_programowania\programy_spoj\palind2_palindrom_tekstowy\main.cpp
+	<iostream>
+	<string>
+	<algorithm>
+

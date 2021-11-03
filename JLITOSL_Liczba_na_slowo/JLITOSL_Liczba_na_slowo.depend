@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1616334160 source:c:\users\aneta\documents\programowanie\jlitosl_liczba_na_slowo\main.cpp
+	<iostream>
+	<map>
+	<string>
+	<cstdlib>
+

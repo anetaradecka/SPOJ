@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1610897467 source:c:\users\aneta\documents\kurs_programowania\programy_spoj\glutton_obzartuchy\main.cpp
+	<iostream>
+	<windows.h>
+

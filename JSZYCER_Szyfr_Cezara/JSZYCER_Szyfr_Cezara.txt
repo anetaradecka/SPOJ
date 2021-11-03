@@ -1,0 +1,84 @@
+zad. 6 JSZYCER - Szyfr Cezara
+
+1. Wprowadź ciąg znaków i zapisz w zmiennej typu string (funkcja getline(), aby pobierać 
+tekst wraz z białymi znakami)
+2. Iteruj po tablicy (string jest jednocześnie tablicą), i < długość tekstu :
+a) jeżeli są to litery od A-W zamień na znak stojący trzy miejsca dalej  --> Tablica ASCII od 65 do 87, np. 65 + 3 = 68
+b) jeżeli są to litery X, Y, Z zamień na litery z początku alfabetu A, B, C   --> Tablica ASCII 87, 88, 89
+3. Wypisz nowy tekst
+#include <iostream>
+
+
+using namespace std;
+
+int main()
+{
+    string tekst;
+    while(getline(cin, tekst))
+    {
+        for(int i= 0; i < tekst.length(); i++)
+        {
+            if(tekst[i] > 87)
+            {
+                if(tekst[i] == 'X')
+                    tekst[i] = 'A';
+                if(tekst[i] == 'Y')
+                    tekst[i] = 'B';
+                if(tekst[i] == 'Z')
+                    tekst[i] = 'C';
+            }
+            else if(tekst[i] > 64)
+            {
+                tekst[i] = tekst[i]+3;
+            }
+        }
+        for(int i = 0; i < tekst.length(); i++)
+        {
+            cout << tekst[i];
+        }
+        
+        cout <<endl;
+    }
+
+    return 0;
+}
+
+----------------------------------------------------------------------------------------------------------
+odwrócony szyfr:
+
+#include <iostream>
+
+
+using namespace std;
+
+int main()
+{
+    string tekst;
+    while(getline(cin, tekst)) //Ciąg tekstu, więc musi być while zamiast pętli for
+    {
+        for(int i= 0; i < tekst.length(); i++)
+        {
+            if(tekst[i] < 68)
+            {
+                if(tekst[i] == 'A')
+                    tekst[i] = 'X';
+                if(tekst[i] == 'B')
+                    tekst[i] = 'Y';
+                if(tekst[i] == 'C')
+                    tekst[i] = 'Z';
+            }
+            else if(tekst[i] > 67)
+            {
+                tekst[i] = tekst[i]-3;
+            }
+        }
+        for(int i = 0; i < tekst.length(); i++)
+        {
+            cout << tekst[i];
+        }
+        
+        cout <<endl;
+    }
+
+    return 0;
+}

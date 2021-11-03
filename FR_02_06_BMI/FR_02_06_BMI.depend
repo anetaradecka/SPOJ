@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1614071333 source:c:\users\aneta\documents\programowanie\fr_02_06_bmi\main.cpp
+	<iostream>
+	<string>
+	<vector>
+

@@ -1,0 +1,9 @@
+TYTUŁ: KC004 - Zliczanie wystąpień
+
+Plan:
+1. Wprowadź ciąg liczb 
+2. Zmienne x (poszukiwana liczba), length (długość ciągu), numerator (licznik wystąpień)
+3. Iteruj po tablicy i zwiększaj licznik gdy tab[i] = numerator
+4. Wyświetl wynik
+
+

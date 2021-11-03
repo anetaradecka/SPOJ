@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1615231183 source:c:\users\aneta\documents\programowanie\hextobin_szesnastkowa_na_binarna\main.cpp
+	<iostream>
+	<map>
+	<string>
+	<algorithm>
+

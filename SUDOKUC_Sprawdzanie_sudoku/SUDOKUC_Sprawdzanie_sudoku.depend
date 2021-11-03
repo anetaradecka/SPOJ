@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1611868103 source:c:\users\aneta\documents\kurs_programowania\programy_spoj\sudokuc_sprawdzanie_sudoku\main.cpp
+	<iostream>
+	<cstdlib>
+

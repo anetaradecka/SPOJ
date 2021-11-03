@@ -1,0 +1,109 @@
+zad. 3 AL_05_01 - Czarodziejskie lusterko
+
+1. Wpisz liczbę i zapisz ją w zmiennej liczba (unsigned long long int?);
+2. Stwórz tablicę do zamiany na liczbę binarną o maksymalnej wielkości 63 (64bity - 1);
+3. Zamien liczbę na liczbę w systemie binarnym (gotowa funkcja)
+4. Odwróć tablicę
+5. Stwórz tablicę z potęgami, która będzie miała max 63 miejsca 
+6. Iteruj po odwróconej tablicy, jeżeli tab[i] == 1 to dodaj do zmiennej suma wartość pod korespondującym elementem z tablicy potęg
+
+#include <iostream>
+
+using namespace std;
+
+void odwrocTablice(int *tab, int *w_i);
+unsigned long long int decNaBin(unsigned long long int liczba);
+void potegowanie(unsigned long long int *p, int *w_i);
+unsigned long long int binNaDec(unsigned long long int *p, int *tab, int *w_i);
+
+#include <iostream>
+
+using namespace std;
+
+void odwrocTablice(int *tab, int *w_i);
+unsigned long long int decNaBin(unsigned long long int liczba);
+void potegowanie(unsigned long long int *p, int *w_i);
+unsigned long long int binNaDec(unsigned long long int *p, int *tab, int *w_i);
+
+int main()
+{
+    unsigned long long int liczba;
+
+    while(cin>>liczba)
+    {
+        unsigned long long int wynik = decNaBin(liczba);
+        cout << wynik << endl;
+    }
+
+    return 0;
+}
+
+unsigned long long int decNaBin(unsigned long long int liczba)
+{
+
+    int i = 0;
+    int *tab = new int[63];
+
+    while(liczba)
+    {
+        tab[i++] = liczba%2;
+        liczba /= 2;
+    }
+
+    int *w_i = &i;
+
+   odwrocTablice(tab, w_i);
+
+    unsigned long long int *p = new unsigned long long int[*w_i];
+    potegowanie(p, w_i);
+
+    unsigned long long int wynik = binNaDec(p, tab, w_i);
+
+    delete [] tab;
+    delete [] p;
+
+    return wynik;
+}
+
+unsigned long long int binNaDec(unsigned long long int *p, int *tab, int *w_i)
+{
+    unsigned long long int suma = 0;
+    for(int j=0; j<*w_i; j++)
+    {
+        if(tab[j] == 1)
+            suma += p[j];
+    }
+    return suma;
+}
+
+void odwrocTablice(int *tab, int *w_i)
+{
+    unsigned long long int *pom = new unsigned long long int[*w_i];
+    int licznik = *w_i;
+    int n = licznik-1;
+
+    for(int j = 0; j < *w_i; j++)
+    {
+        pom[j] = tab[n];
+        n--;
+    }
+        for(int j = 0; j < *w_i; j++)
+    {
+        tab[j] = pom[j];
+    }
+    delete [] pom;
+}
+
+void potegowanie(unsigned long long int *p, int *w_i)
+{
+
+    unsigned long long int podstawa = 2;
+    p[0] = 1;
+    p[1] = 2;
+
+    for(int j = 2; j < *w_i; j++)
+    {
+        podstawa *=2;
+        p[j] = podstawa;
+    }
+}
